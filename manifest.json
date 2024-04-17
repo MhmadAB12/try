@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Website Search Extension",
+    "version": "1.0",
+    "description": "Search any website for links, text, images, or videos",
+    "permissions": ["tabs", "https://*/*"],
+    "host_permissions": ["<all_urls>"],
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }

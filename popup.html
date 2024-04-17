@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website Search</title>
+    <style>
+      /* Add your custom styles here */
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="url">Website URL:</label>
+      <input type="text" id="url" placeholder="Enter website URL" />
+    </div>
+    <div>
+      <label for="searchType">Search for:</label>
+      <select id="searchType">
+        <option value="links">Links</option>
+        <option value="text">Text</option>
+        <option value="images">Images</option>
+        <option value="videos">Videos</option>
+      </select>
+    </div>
+    <div>
+      <button id="searchButton">Search</button>
+    </div>
+    <div id="results"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

